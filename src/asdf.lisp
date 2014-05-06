@@ -11,6 +11,6 @@
 (defmethod perform ((o compile-op) (component fixture))
   (let ((pathname (component-pathname component)))
     (format t "Loading fixture '~A~&" (pathname-name pathname))
-    (load-fixtures (slurp-file pathname))))
+    (load-fixtures (read-fixtures pathname))))
 
 (import 'fixture :asdf)
