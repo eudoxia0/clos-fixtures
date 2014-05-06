@@ -30,7 +30,7 @@ ASDF-loadable fixtures for CLOS classes.
 ## Loading from Lisp
 
 ```lisp
-(clos-fixtures:load
+(clos-fixtures:load-fixtures
   '(myapp:user ...))
 ```
 
@@ -39,7 +39,7 @@ ASDF-loadable fixtures for CLOS classes.
 Simply put this in your components tree (Check `clos-fixtures-test.asd` for an example):
 
 ```lisp
-(:clos-fixture "filename")
+(:fixture "filename")
 ```
 
 ## Post-processing
