@@ -5,4 +5,5 @@
   :components ((:module "t"
                 :components
                 ((:file "clos-fixtures")
-                 (:fixture "cities")))))
+                 (:fixture "cities")
+                 (:fixture "molecules")))))
