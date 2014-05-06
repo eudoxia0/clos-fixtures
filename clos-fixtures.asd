@@ -1,8 +1,3 @@
-(in-package :cl-user)
-(defpackage clos-fixtures-asd
-  (:use :cl :asdf))
-(in-package :clos-fixtures-asd)
-
 (defsystem clos-fixtures
   :version "0.1"
   :author "Fernando Borretti"
