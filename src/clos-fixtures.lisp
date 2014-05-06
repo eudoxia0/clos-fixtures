@@ -13,6 +13,7 @@
       (setf (elt seq 0) #\()
       (setf (fill-pointer seq) (read-sequence seq stream :start 1))
       (setf (elt seq (1- (fill-pointer seq))) #\))
-      seq)))
+      (read-from-string seq))))
 
-(defun load-fixtures (fixtures) t)
+(defun load-fixtures (fixtures)
+  (print fixtures))
