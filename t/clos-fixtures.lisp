@@ -1,6 +1,8 @@
 (in-package :cl-user)
 (defpackage clos-fixtures-test
-  (:use :cl))
+  (:use :cl)
+  (:export :city
+           :molecule))
 (in-package :clos-fixtures-test)
 
 (defclass city ()
