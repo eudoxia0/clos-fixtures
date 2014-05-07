@@ -27,6 +27,17 @@ ASDF-loadable fixtures for CLOS classes.
    :city "Denver"))
 ```
 
+## `register-fixture`
+
+This method has to be defined for every class you want to load.
+
+An example using the `user` model from the last example:
+
+```lisp
+(defmethod clos-fixtures:register-fixture ((user myapp:user))
+  (cl-mongo:db.insert "users" (cl-mongo:kv (name user) (groups user))))
+```
+
 ## Loading from Lisp
 
 ```lisp
@@ -40,16 +51,6 @@ Simply put this in your components tree (Check `clos-fixtures-test.asd` for an e
 
 ```lisp
 (:fixture "filename")
-```
-
-## Post-processing
-
-Add this to the fixture:
-
-```lisp
-(app:user-model
- ...
- :fn #'app:add-instances-to-db)
 ```
 
 # License
