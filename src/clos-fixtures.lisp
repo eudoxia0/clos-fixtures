@@ -1,6 +1,7 @@
 (in-package :cl-user)
 (defpackage clos-fixtures
-  (:use :cl :asdf))
+  (:use :cl :asdf)
+  (:export :register-fixture))
 (in-package :clos-fixtures)
 
 (defun read-fixtures (path)
@@ -15,5 +16,13 @@
       (setf (elt seq (1- (fill-pointer seq))) #\))
       (read-from-string seq))))
 
+(defgeneric register-fixture (instance)
+  (:documentation "Register a fixture."))
+
 (defun load-fixtures (fixtures)
-  (print fixtures))
+  (loop for fixture in fixtures do
+    (let ((class (first fixture)))
+      (loop for fixture-params in (rest fixture) do
+        (register-fixture (apply #'make-instance
+                                 (append (list class)
+                                         fixture-params)))))))
