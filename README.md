@@ -49,7 +49,7 @@ Add this to the fixture:
 ```lisp
 (app:user-model
  ...
- :post-processing #'app:add-instances-to-db)
+ :fn #'app:add-instances-to-db)
 ```
 
 # License
