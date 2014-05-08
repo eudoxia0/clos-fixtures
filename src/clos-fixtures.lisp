@@ -19,9 +19,11 @@
 (defgeneric register-fixture (instance)
   (:documentation "Register a fixture."))
 
-(defun load-fixtures (fixtures)
+(defun load-fixtures (fixtures &optional package)
   (loop for fixture in fixtures do
-    (let ((class (first fixture)))
+    (let ((class (if package
+                     (intern (symbol-name (first fixture)) package)
+                     (first fixture))))
       (loop for fixture-params in (rest fixture) do
         (register-fixture (apply #'make-instance
                                  (append (list class)
