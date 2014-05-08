@@ -6,4 +6,4 @@
                 :components
                 ((:file "clos-fixtures")
                  (:fixture "cities")
-                 (:fixture "molecules")))))
+                 (:fixture "molecules" :package :clos-fixtures-test)))))

@@ -1,4 +1,4 @@
-(clos-fixtures-test:molecule
+(molecule
  (:name "Methane"
   :formula "CH4")
  (:name "Cubane"
