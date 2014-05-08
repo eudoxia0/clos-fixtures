@@ -53,6 +53,21 @@ Simply put this in your components tree (Check `clos-fixtures-test.asd` for an e
 (:fixture "filename")
 ```
 
+Optionally, you can use the `:package` argument so you don't have to specify the
+package in the fixture itself. An example from the tests:
+
+```lisp
+(:fixture "molecules" :package :clos-fixtures-test)
+```
+
+```lisp
+(molecule
+ (:name "Methane"
+  :formula "CH4")
+ (:name "Cubane"
+  :formula "C8H8"))
+```
+
 # License
 
 Copyright (c) 2014 Fernando Borretti (eudoxiahp@gmail.com)
