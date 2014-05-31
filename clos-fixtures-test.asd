@@ -1,4 +1,4 @@
-(defsystem clos-fixtures-test
+(asdf:defsystem clos-fixtures-test
   :author "Fernando Borretti"
   :license "MIT"
   :defsystem-depends-on (:clos-fixtures)
