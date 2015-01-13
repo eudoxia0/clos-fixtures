@@ -1,3 +1,7 @@
+# clos-fixtures
+
+[![Build Status](https://travis-ci.org/eudoxia0/clos-fixtures.svg?branch=master)](https://travis-ci.org/eudoxia0/clos-fixtures)
+
 ASDF-loadable fixtures for CLOS classes.
 
 # Usage
