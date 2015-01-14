@@ -2,9 +2,10 @@
 
 (defclass fixture (source-file)
   ((type :initform "lisp")
-   (package :initform nil
-            :initarg :package
-            :reader fixture-package)))
+   (package-name :reader fixture-package-name
+                 :initarg :package
+                 :initform :cl
+                 :documentation "The name of the package to read the forms in.")))
 
 (defmethod perform ((o load-op) (component fixture)) t)
 
@@ -14,7 +15,6 @@
 (defmethod perform ((o compile-op) (component fixture))
   (let ((pathname (component-pathname component)))
     (format t "~&Loading fixture '~A'" (pathname-name pathname))
-    (load-fixtures (read-fixtures pathname)
-                   (fixture-package component))))
+    (load-fixtures pathname (fixture-package-name component))))
 
 (import 'fixture :asdf)
