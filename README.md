@@ -46,7 +46,7 @@ An example using the `user` model from the last example:
 
 ```lisp
 (clos-fixtures:load-fixtures
-  '(myapp:user ...))
+  #P"/path/to/fixture-file")
 ```
 
 ## Loading from ASDF
