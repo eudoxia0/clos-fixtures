@@ -1,7 +1,8 @@
 (in-package :cl-user)
 (defpackage clos-fixtures
   (:use :cl :asdf)
-  (:export :register-fixture))
+  (:export :register-fixture
+           :load-fixtures))
 (in-package :clos-fixtures)
 
 (defun read-fixtures (path package)
@@ -11,7 +12,7 @@
 (defgeneric register-fixture (instance)
   (:documentation "Register a fixture."))
 
-(defun load-fixtures (pathname package-name)
+(defun load-fixtures (pathname &optional (package-name *package*))
   (let* ((package (find-package package-name))
          (fixtures (read-fixtures pathname package)))
     (loop for fixture in fixtures do
