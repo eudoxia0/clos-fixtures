@@ -18,6 +18,5 @@
     (loop for fixture in fixtures do
       (let ((class (first fixture)))
         (loop for fixture-params in (rest fixture) do
-          (register-fixture (apply #'make-instance
-                                   (append (list class)
-                                           fixture-params))))))))
+          (register-fixture (apply #'make-instance class
+                                   (eval (cons 'list fixture-params)))))))))
