@@ -21,6 +21,10 @@
   (is
    (equal
     (gethash "Cubane" *molecule-db*)
-    "C8H8")))
+    "C8H8"))
+  (is
+   (equal
+    (gethash "Water" *molecule-db*)
+    "H2O")))
 
 (run! 'fixtures)
