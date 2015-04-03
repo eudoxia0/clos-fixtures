@@ -1,8 +1,8 @@
 (asdf:defsystem clos-fixtures-test
   :author "Fernando Borretti"
   :license "MIT"
-  :defsystem-depends-on (:clos-fixtures
-                         :fiveam)
+  :defsystem-depends-on (:clos-fixtures)
+  :depends-on (:fiveam)
   :components ((:module "t"
                 :serial t
                 :components
