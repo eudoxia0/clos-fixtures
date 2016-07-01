@@ -3,7 +3,7 @@
   :author "Fernando Borretti"
   :license "MIT"
   :homepage "https://github.com/eudoxia0/clos-fixtures"
-  :depends-on (:asdf)
+  :depends-on ()
   :components ((:module "src"
                 :components
                 ((:file "clos-fixtures")
